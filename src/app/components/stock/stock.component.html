@@ -1,0 +1,17 @@
+<main>
+
+  <div *ngIf="stock">
+    <header class="header">
+      <h1>{{stock.name}}</h1>
+
+      <div>
+        <h2>{{stock.price}}</h2>
+        <button mat-icon-button (click)="addRemoveFavorite(stock)">
+          <mat-icon *ngIf="!isFavorite(stock)">favorite_border</mat-icon>
+          <mat-icon *ngIf="isFavorite(stock)">favorite</mat-icon>
+        </button>
+      </div>
+    </header>
+  </div>
+
+</main>

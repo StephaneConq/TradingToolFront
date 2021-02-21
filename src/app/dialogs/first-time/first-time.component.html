@@ -1,0 +1,26 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+
+<h1 mat-dialog-title>Hey, first time here?</h1>
+<div mat-dialog-content>
+  <p>
+    Welcome! Before we start, we are going to need some info about yourself.
+    <br/>
+    More specifically, your Telegram username. That way, we will be able to notify you when to buy some coins!
+    <br />
+    <br />
+    Please send a message to @DenisTradingBot to initiate. Then enter your username and click on done.
+  </p>
+
+  <mat-form-field>
+    <mat-label>Telegram username</mat-label>
+    <span matPrefix>@</span>
+    <input matInput [formControl]="control"/>
+    <mat-error>
+      Username was not found. Did you send a message to the bot?
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="verifyUsername()">Done</button>
+</mat-dialog-actions>

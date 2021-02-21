@@ -1,0 +1,18 @@
+<main>
+  <p *ngIf="user && user.watchlist.length === 0">
+    Your portfolio looks quite empty. Search for a value and add it!
+  </p>
+
+  <mat-list *ngIf="user">
+    <mat-list-item *ngFor="let stock of user.watchlist" (click)="moveToStock(stock)">
+      <mat-icon mat-list-icon>trending_up</mat-icon>
+      <div mat-line>{{stock.symbol}}</div>
+
+      <div class="price-container">
+        <span>{{stock.limit}} %</span>
+        <span>{{getStockPrice(stock.symbol)}}</span>
+      </div>
+
+    </mat-list-item>
+  </mat-list>
+</main>
