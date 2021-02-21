@@ -14,7 +14,6 @@ export class AddStockComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AddStockComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { name: string },
-    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {

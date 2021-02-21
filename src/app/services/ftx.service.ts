@@ -15,6 +15,6 @@ export class FtxService {
   }
 
   getMarket(market): Observable<any> {
-    return this.http.get('/market/' + market);
+    return this.http.get('/market/' + market.replace('/', '---'));
   }
 }

@@ -49,6 +49,9 @@ export class StockComponent implements OnInit {
           name: stock.name
         }
       }).afterClosed().subscribe((data: {symbol: string; limit: number}) => {
+        if (!data) {
+          return;
+        }
         this.userService.user.watchlist.push(data);
         this.userService.setUser(this.userService.user).subscribe(() => {
           this.snackBar.open('Stock added', 'Dismiss', {duration: 3000});
