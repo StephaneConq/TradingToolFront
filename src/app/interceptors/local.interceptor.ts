@@ -18,7 +18,7 @@ export class LocalInterceptor implements HttpInterceptor {
 
     request = request.clone({
       setHeaders: {
-        'X-Goog-Authenticated-User-Email': 'conqstephane@gmail.com'
+        'X-Goog-Authenticated-User-Email': 'accounts.google.com:conqstephane@gmail.com'
       },
       url: environment.apiUrl + request.url
     });

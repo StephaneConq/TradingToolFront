@@ -22,7 +22,7 @@ export class AddStockComponent implements OnInit {
   add(): void {
     this.dialogRef.close({
       symbol: this.data.name,
-      limit: this.model
+      limit: parseFloat(this.model.toString(10))
     });
   }
 
